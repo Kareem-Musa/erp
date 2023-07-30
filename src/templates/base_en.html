@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/bs/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base_en.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    {% include 'snippets/header_en.html' %}
+    <div class="">
+      <div class="row">
+        <div class="col-4">
+          {% include 'snippets/side.html' %}
+        </div>
+        <div class="col-8">
+          {% block content %}
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/bs/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.7.0.js' %}"></script>
+  </body>
+</html>

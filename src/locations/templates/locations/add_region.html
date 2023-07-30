@@ -1,0 +1,21 @@
+{% extends 'base_ar.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+{% endblock title %}
+{% block content %}
+  <div class=" container mt-4">
+    <div class="h-100 p-3  border rounded-3">
+          <h5>{{ header }}</h5><hr />
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <div class="col-6" id="name">{{ form.name|as_crispy_field }}</div>
+            </div>
+            <button class="btn btn-outline-secondary" type="button">{{ action }}</button>
+          </form>
+
+    </div>
+  </div>
+{% endblock content %}
+{% block js %}
+{% endblock js %}
